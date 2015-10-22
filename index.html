@@ -5,10 +5,13 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<title>Angular Book Store</title>
 </head>
-<body>	
+<body>
+<div ng-controller="StoreController as store">
+	<h1>{{store.product.name}}</h1>
+	<h2>{{store.product.price | currency}}</h2>
+	<p>{{store.product.description}}</p>
+</div>	
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <p>{{1+2}}</p>
-
 </body>
 </html>
