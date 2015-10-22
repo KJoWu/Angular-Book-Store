@@ -8,18 +8,23 @@
     <title>Angular Book Store</title>
 </head>
 
-<body>
-    <div ng-controller="StoreController as store">
+<body ng-controller="StoreController as store">
+    <ul class="list-group">
+        <li class- "list-group-item" ng-repeat="product in store.products">
+            <h3>{{product.name}}
+    			<em class="pull-right">{{product.price|currency}}</em>
+    		</h3>
+        </li>
+    </ul>
+    <!--
         <div ng-repeat="item in store.products">
             <div ng-hide="item.soldOut">
                 <h1>{{item.name}}</h1>
                 <h2>{{item.price | currency}}</h2>
                 <p>{{item.description}}</p>
                 <button ng-show="store.product.canPurchase">Add to Cart</button>
-                <!--only show if expression=true-->
-            </div>
-        </div>
-    </div>
+                <!--only show if expression=true
+                -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/app.js"></script>
 </body>
