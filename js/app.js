@@ -4,16 +4,27 @@
         this.products = books;
     });
 
+    app.controller("PanelController", function() {
+        this.tab = 1; /*ng-init*/
+        this.selectTab = function(setTab) {
+            this.tab = setTab;
+        };
+        this.isSelected = function(checkTab) {
+            return this.tab === checkTab;
+        };
+    });
 
-/*You can also do:
-images:[
-"1.jpg", 
-"2.jpg",
-"3.jpg"]
 
-if an image gallery in html doesn't have images, you can check it by:
-ng-show="products.images.length"
-*/
+
+    /*You can also do:
+    images:[
+    "1.jpg", 
+    "2.jpg",
+    "3.jpg"]
+
+    if an image gallery in html doesn't have images, you can check it by:
+    ng-show="products.images.length"
+    */
 
     var books = [{
         name: "Toy Story",
@@ -35,8 +46,7 @@ ng-show="products.images.length"
             full: "img/2.jpg",
             thumb: "img/2-t.jpg"
         }]
-    }, 
-    {
+    }, {
         name: "movie",
         price: 15,
         description: "A scary misty story",
@@ -46,8 +56,7 @@ ng-show="products.images.length"
             full: "img/3.jpg",
             thumb: "img/3-t.jpg"
         }]
-    },
-    {
+    }, {
         name: "movie",
         price: 15,
         description: "A scary misty story",
@@ -57,8 +66,7 @@ ng-show="products.images.length"
             full: "img/4.jpg",
             thumb: "img/4-t.jpg"
         }]
-    },
-    {
+    }, {
         name: "movie",
         price: 15,
         description: "A scary misty story",
@@ -68,8 +76,7 @@ ng-show="products.images.length"
             full: "img/5.jpg",
             thumb: "img/5-t.jpg"
         }]
-    },
-    {
+    }, {
         name: "movie",
         price: 15,
         description: "A scary misty story",
