@@ -9,15 +9,36 @@
 </head>
 
 <body ng-controller="StoreController as store">
-    <ul class="list-group">
-        <li class- "list-group-item" ng-repeat="product in store.products">
-            <h3>{{product.name}}
-    			<em class="pull-right">{{product.price|currency}}</em>
-                <img ng-src={{product.images[0].full}}
-    		</h3>
-        </li>
-    </ul>
-    <!--
+    <div class="container">
+        <ul class="list-group text-center">
+            <li class- "list-group-item" ng-repeat="product in store.products">
+                <h3>{{product.name}}
+                <em class="pull-right">{{product.price|currency}}</em>
+                <img ng-src="{{product.images[0].full}}"/>
+                </h3>
+                <section>
+                    <ul class="nav nav-pills">
+                        <li> <a href ng-click="tab=1">Description</a></li>
+                        <li> <a href ng-click="tab=2">Release Date</a></li>
+                        <li> <a href ng-click="tab=3">Reviews</a></li>
+                    </ul>
+                </section>
+                {{tab}}
+                <div class="panel">
+                    <h4>Description</h4>
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="panel">
+                    <h4>Release Date</h4>
+                    <blockquote>None yet</blockquote>
+                </div>
+                <div class="panel">
+                    <h4>Reviews</h4>
+                    <blockquote>None yet</blockquote>
+                </div>
+            </li>
+        </ul>
+        <!--
         <div ng-repeat="item in store.products">
             <div ng-hide="item.soldOut">
                 <h1>{{item.name}}</h1>
@@ -26,6 +47,7 @@
                 <button ng-show="store.product.canPurchase">Add to Cart</button>
                 <!--only show if expression=true
                 -->
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/app.js"></script>
 </body>

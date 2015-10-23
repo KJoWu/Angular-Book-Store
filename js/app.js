@@ -4,6 +4,17 @@
         this.products = books;
     });
 
+
+/*You can also do:
+images:[
+"1.jpg", 
+"2.jpg",
+"3.jpg"]
+
+if an image gallery in html doesn't have images, you can check it by:
+ng-show="products.images.length"
+*/
+
     var books = [{
         name: "Toy Story",
         price: 20,
