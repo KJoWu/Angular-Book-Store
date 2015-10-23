@@ -16,23 +16,24 @@
                 <em class="pull-right">{{product.price|currency}}</em>
                 <img ng-src="{{product.images[0].full}}"/>
                 </h3>
-                <section>
+                <section ng-init="tab=1">
+                    <!--tab 1 is initialized-->
                     <ul class="nav nav-pills">
-                        <li> <a href ng-click="tab=1">Description</a></li>
-                        <li> <a href ng-click="tab=2">Release Date</a></li>
-                        <li> <a href ng-click="tab=3">Reviews</a></li>
+                        <li ng-class="{active:tab==1}"> <a href ng-click="tab=1">Description</a></li>
+                        <li ng-class="{active:tab==2}"> <a href ng-click="tab=2">Release Date</a></li>
+                        <li ng-class="{active:tab==3}"> <a href ng-click="tab=3">Reviews</a></li>
                     </ul>
                 </section>
-                {{tab}}
-                <div class="panel">
+                <!--{{tab}}-->
+                <div class="panel" ng-show="tab===1">
                     <h4>Description</h4>
                     <p>{{product.description}}</p>
                 </div>
-                <div class="panel">
+                <div class="panel" ng-show="tab===2">
                     <h4>Release Date</h4>
                     <blockquote>None yet</blockquote>
                 </div>
-                <div class="panel">
+                <div class="panel" ng-show="tab===3">
                     <h4>Reviews</h4>
                     <blockquote>None yet</blockquote>
                 </div>
